@@ -20,13 +20,13 @@ const style = makeStyles(theme => ({
     }
 }))
 
-const Navbar = props => {
+const Navbar = ({name}) => {
     const classes = style()
     const history = useHistory()
     const [openDrawer, setOpenDrawer] = useState(false)
 
     const handleClickPage = page => {
-        if (page === props.name)
+        if (page === name)
             return
 
         history.push(page)
@@ -41,7 +41,7 @@ const Navbar = props => {
                         <Menu />
                     </IconButton>
                     <Typography variant="h6" className={classes.typo} >
-                        {props.name}
+                        {name}
                     </Typography>
                     <IconButton onClick={() => history.push("Profile")}>
                         <AccountCircle />

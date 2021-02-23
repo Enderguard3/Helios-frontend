@@ -1,7 +1,7 @@
 import {createRef, useEffect} from "react";
 import Chart from 'chart.js'
 
-const Barchart = () => {
+const Barchart = ({className}) => {
     let chart = createRef()
 
     useEffect(() => {
@@ -29,7 +29,7 @@ const Barchart = () => {
     });
 
     return (
-        <canvas ref={chart} />
+        <canvas ref={chart} className={className}/>
     )
 }
 
