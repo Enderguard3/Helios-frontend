@@ -15,8 +15,6 @@ const style = makeStyles({
 const News = ({className}) => {
     const classes = style()
 
-    // TODO : Overflow News
-
     return (
         <Paper className={className}>
             <GridList cols={1} cellHeight={'auto'} className={classes.news_list}>
@@ -27,9 +25,6 @@ const News = ({className}) => {
                         {title: 'title3', content: 'content\ncontent\ncontent\ncontent'},
                         {title: 'title4', content: 'content\ncontent\ncontent\ncontent'},
                         {title: 'title5', content: 'content\ncontent\ncontent\ncontent'},
-                        {title: 'title6', content: 'content\ncontent\ncontent\ncontent'},
-                        {title: 'title7', content: 'content\ncontent\ncontent\ncontent'},
-                        {title: 'title8', content: 'content\ncontent\ncontent\ncontent'},
                     ].map(({title, content}) => (
                         <GridListTile key={title} className={classes.news}>
                             <Typography variant="h6">
