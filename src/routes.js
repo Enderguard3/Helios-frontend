@@ -3,6 +3,7 @@ import Dashboard  from './view/Dashboard'
 import Rating  from './view/Rating'
 import Leaderboard  from './view/Leaderboard'
 import Profile  from './view/Profile'
+import NewGame from './view/New_game'
 
 const routes = [
     {
@@ -29,6 +30,10 @@ const routes = [
         'name': 'Profile',
         'path': '/Profile',
         'component': Profile
+    }, {
+        'name': 'NewGame',
+        'path': '/NewGame',
+        'component': NewGame
     }
 ]
 
