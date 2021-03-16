@@ -61,7 +61,7 @@ const Navbar = ({name}) => {
                             {name: "Dashboard", icon: <Home />},
                             {name: "Rating", icon: <CommentOutlined />},
                             {name: "Leaderboard", icon: <InsertChart />},
-                            {name: "NewGame", icon: <InsertChart />}
+                            {name: "Test", icon: null},
                         ].map(({name, icon}) => (
                             <ListItem button key={name} onClick={() => handleClickPage(name)}>
                                 <ListItemIcon>

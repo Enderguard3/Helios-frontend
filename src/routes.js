@@ -3,7 +3,7 @@ import Dashboard  from './view/Dashboard'
 import Rating  from './view/Rating'
 import Leaderboard  from './view/Leaderboard'
 import Profile  from './view/Profile'
-import NewGame from './view/New_game'
+import Test  from './view/Test'
 
 const routes = [
     {
@@ -31,9 +31,9 @@ const routes = [
         'path': '/Profile',
         'component': Profile
     }, {
-        'name': 'NewGame',
-        'path': '/NewGame',
-        'component': NewGame
+        'name': 'Test',
+        'path': '/Test',
+        'component': Test
     }
 ]
 
