@@ -2,7 +2,7 @@ import {useState} from "react"
 import {useHistory} from "react-router-dom"
 import {AppBar, Toolbar, Typography, IconButton, Divider, List, ListItem,
     ListItemIcon, ListItemText, Drawer, makeStyles} from '@material-ui/core'
-import {Home, CommentOutlined, AccountCircle, InsertChart, Menu, ArrowLeft} from '@material-ui/icons'
+import {Home, CommentOutlined, AccountCircle, InsertChart, Menu, ArrowLeft, Announcement} from '@material-ui/icons'
 
 
 const style = makeStyles(theme => ({
@@ -17,6 +17,9 @@ const style = makeStyles(theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
+    },
+    appBarColor: {
+        backgroundColor: '#935d5d'
     }
 }))
 
@@ -34,7 +37,7 @@ const Navbar = ({name}) => {
 
     return (
         <div>
-            <AppBar position="static">
+            <AppBar position="static" className = {classes.appBarColor}>
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="menu" className={classes.menu}
                         onClick={() => setOpenDrawer(true)}>
@@ -62,6 +65,7 @@ const Navbar = ({name}) => {
                             {name: "Rating", icon: <CommentOutlined />},
                             {name: "Leaderboard", icon: <InsertChart />},
                             {name: "Test", icon: null},
+                            {name: "News", icon: <Announcement />},
                         ].map(({name, icon}) => (
                             <ListItem button key={name} onClick={() => handleClickPage(name)}>
                                 <ListItemIcon>

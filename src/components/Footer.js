@@ -5,10 +5,12 @@ import { fontFamily, fontWeight, grid } from '@material-ui/system'
 const useStyle = makeStyles(theme => ({
 
     footer : {
-        backgroundColor : '#5d9393',
+        backgroundColor : '#935d5d',
+        position: 'absolute',
+        width: '99%',
     },
     subFooter: {
-        backgroundColor: '#5d9393',
+        backgroundColor: '#935d5d',
         padding: '8px 16px 8px 16px',
         marginTop: '8px'
     },

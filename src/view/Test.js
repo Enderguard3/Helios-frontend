@@ -5,9 +5,7 @@ import {makeStyles} from "@material-ui/core";
 
 
 const style = makeStyles(theme => ({
-    news: {
-        marginTop: '5%',
-    }
+
 }))
 
 const Test = () => {
@@ -16,8 +14,7 @@ const Test = () => {
 
     return <div>
         <Navbar name={"Test"} />
-        <News className={classes.news} />
-
+        <News/>
         <Footer />
     </div>
 }

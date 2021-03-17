@@ -4,7 +4,8 @@ import Rating  from './view/Rating'
 import Leaderboard  from './view/Leaderboard'
 import Profile  from './view/Profile'
 import Test  from './view/Test'
-
+import News from './view/News'
+import News_details from './view/News_details'
 const routes = [
     {
         'name': 'Login',
@@ -34,6 +35,14 @@ const routes = [
         'name': 'Test',
         'path': '/Test',
         'component': Test
+    }, {
+        'name': 'News',
+        'path': '/News',
+        'component': News
+    }, {
+        'name': 'News_details',
+        'path': '/News_details',
+        'component': News_details
     }
 ]
 

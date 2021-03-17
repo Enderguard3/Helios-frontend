@@ -1,21 +1,28 @@
-import {Card,CardActions,CardActionArea,CardContent,Typography,makeStyles, Button} from "@material-ui/core"
+import {Card,CardActions,CardActionArea,CardContent,Typography,makeStyles, Divider} from "@material-ui/core"
 import React, {useEffect, useState} from 'react'
+import moment from 'moment'
+import {useHistory} from "react-router-dom"
 
 const useStyle = makeStyles({
     news: {
-        borderBottom : "1px solid black"
+        position: "fixed"
     },
-    news_list: {
-        borderTop : "1px solid black",
-        borderRight : "1px solid black",
-        borderLeft : "1px solid black",
+    content: {
+        textOverflow: "ellipsis"
     }
+
+    
 })
 
 const News = () => {
 
     const classes = useStyle();
     const [news, setNews] = useState([]);
+    const history = useHistory()
+
+    const handleClickPage = (id) => {
+        history.push('News_details')
+    }
 
     // function GetNEWS()
     /*
@@ -29,31 +36,39 @@ const News = () => {
     */
     useEffect(() => {
         //appel function GetNEWS
+
     })
 
+    const newsList = [
+        {id: 1, title:"Test n1", content:"blablablblalablablablablabalbabllablbalablablablbalab\nlablabgbfuzhjsgcsjhdgdfhkjhwfdkjgrshkfgshjfsgjhf", CompanyName: "© 2021 Hasbro", date_: "2021-03-17T16:10"},
+        {id: 2, title:"Test n2", content:"blablablblalablablablablabalbabllablbalablablablbalablablab", CompanyName: "© 2021 Hasbro", date_: "2021-03-17T16:10"},
+        {id: 3, title:"Test n1", content:"blablablblalablablablablabalbabllablbalablablablbalablablab", CompanyName: "© 2021 Hasbro", date_: "2021-03-17T16:10"},
+        {id: 4, title:"Test n1", content:"blablablblalablablablablabalbabllablbalablablablbalablablab", CompanyName: "© 2021 Hasbro", date_: "2021-03-17T16:10"},
+        {id: 5, title:"Test n1", content:"blablablblalablablablablabalbabllablbalablablablbalablablab", CompanyName: "© 2021 Hasbro", date_: "2021-03-17T16:10"},
+       ]
+
     return (
-        <div>
-            {news.map(item => 
+        <div className={classes.news}>
+            {newsList.map(item => 
                 <Card>
-                    <CardActionArea>
+                    <CardActionArea onClick={() => handleClickPage(item.id)}>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">
                                     {item.title}
                                 </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {item.content}
+                                <pre>
+                                <Typography variant="body2" color="textSecondary" component="p" >
+                                        {item.content}          
                                 </Typography>
+                                </pre>
                             </CardContent>
-                    </CardActionArea>
-
-                        <CardActions>
-                            <Button size="small" color="primary">
-                            Share
-                            </Button>
-                            <Button size="small" color="primary">
-                            Learn More
-                            </Button>
-                        </CardActions>                
+                            <Typography gutterBottom variant="h6" component="h2">
+                                        {item.CompanyName}
+                            </Typography>
+                            <Typography gutterBottom variant="h6" component="h2">
+                                        {moment(item.date_).fromNow()}
+                            </Typography>
+                    </CardActionArea>                
                 </Card>
             )}            
         </div>   

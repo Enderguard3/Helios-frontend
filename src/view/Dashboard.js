@@ -1,5 +1,7 @@
 import {Grid, Typography} from "@material-ui/core"
-import {makeStyles} from "@material-ui/core";
+import {makeStyles, Link} from "@material-ui/core";
+import {useHistory} from "react-router-dom"
+
 
 import Navbar from '../components/Navbar'
 import Barchart from "../components/Chart/Barchart"
@@ -16,6 +18,8 @@ const style = makeStyles(theme => ({
 
 const Dashboard = () => {
     const classes = style()
+    const history = useHistory()
+
 
     return (
         <div>
@@ -29,8 +33,11 @@ const Dashboard = () => {
                 </Grid>
                 <Grid item xs >
                     <Typography variant="h4">
+                        <Link onClick={() => {history.push('News')}}>
                         News :
+                        </Link>
                     </Typography>
+                    <News className={classes.news} />
                 </Grid>
             </Grid>
         </div>
