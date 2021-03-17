@@ -1,7 +1,7 @@
-import {GridList, GridListTile, Typography} from "@material-ui/core"
-import {makeStyles, Paper} from "@material-ui/core";
+import {Card,CardActions,CardActionArea,CardContent,Typography,makeStyles, Button} from "@material-ui/core"
+import React, {useEffect, useState} from 'react'
 
-const style = makeStyles({
+const useStyle = makeStyles({
     news: {
         borderBottom : "1px solid black"
     },
@@ -12,32 +12,51 @@ const style = makeStyles({
     }
 })
 
-const News = ({className}) => {
-    const classes = style()
+const News = () => {
+
+    const classes = useStyle();
+    const [news, setNews] = useState([]);
+
+    // function GetNEWS()
+    /*
+    fetch(URL_BACK)
+    .then(res => res.json())
+    .then(
+        (result) => {
+            setNews(result)
+        }
+    )
+    */
+    useEffect(() => {
+        //appel function GetNEWS
+    })
 
     return (
-        <Paper className={className}>
-            <GridList cols={1} cellHeight={'auto'} className={classes.news_list}>
-                {
-                    [
-                        {title: 'title1', content: 'content\ncontent\ncontent\ncontent'},
-                        {title: 'title2', content: 'content\ncontent\ncontent\ncontent'},
-                        {title: 'title3', content: 'content\ncontent\ncontent\ncontent'},
-                        {title: 'title4', content: 'content\ncontent\ncontent\ncontent'},
-                        {title: 'title5', content: 'content\ncontent\ncontent\ncontent'},
-                    ].map(({title, content}) => (
-                        <GridListTile key={title} className={classes.news}>
-                            <Typography variant="h6">
-                                {title}
-                            </Typography>
-                            <pre>
-                                {content}
-                            </pre>
-                        </GridListTile>
-                    ))
-                }
-            </GridList>
-        </Paper>
+        <div>
+            {news.map(item => 
+                <Card>
+                    <CardActionArea>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    {item.title}
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                    {item.content}
+                                </Typography>
+                            </CardContent>
+                    </CardActionArea>
+
+                        <CardActions>
+                            <Button size="small" color="primary">
+                            Share
+                            </Button>
+                            <Button size="small" color="primary">
+                            Learn More
+                            </Button>
+                        </CardActions>                
+                </Card>
+            )}            
+        </div>   
     )
 }
 

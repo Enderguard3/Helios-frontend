@@ -31,7 +31,6 @@ const Dashboard = () => {
                     <Typography variant="h4">
                         News :
                     </Typography>
-                    <News className={classes.news} />
                 </Grid>
             </Grid>
         </div>
