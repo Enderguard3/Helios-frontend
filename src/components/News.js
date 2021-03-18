@@ -4,11 +4,16 @@ import moment from 'moment'
 import {useHistory} from "react-router-dom"
 
 const useStyle = makeStyles({
-    news: {
-        position: "fixed"
-    },
     content: {
         textOverflow: "ellipsis"
+    },
+    info: {
+        fontSize: "15px",
+        marginLeft: "20px"
+    },
+    date: {
+        float: "right",
+        marginRight: "20px"
     }
 
     
@@ -45,10 +50,12 @@ const News = () => {
         {id: 3, title:"Test n1", content:"blablablblalablablablablabalbabllablbalablablablbalablablab", CompanyName: "© 2021 Hasbro", date_: "2021-03-17T16:10"},
         {id: 4, title:"Test n1", content:"blablablblalablablablablabalbabllablbalablablablbalablablab", CompanyName: "© 2021 Hasbro", date_: "2021-03-17T16:10"},
         {id: 5, title:"Test n1", content:"blablablblalablablablablabalbabllablbalablablablbalablablab", CompanyName: "© 2021 Hasbro", date_: "2021-03-17T16:10"},
+        {id: 6, title:"Test n6", content:"blablablblalablablablablabalbabllablbalablablablbalablablab", CompanyName: "© 2021 Hasbro", date_: "2021-03-18T14:10"},
+
        ]
 
     return (
-        <div className={classes.news}>
+        <div>
             {newsList.map(item => 
                 <Card>
                     <CardActionArea onClick={() => handleClickPage(item.id)}>
@@ -62,12 +69,11 @@ const News = () => {
                                 </Typography>
                                 </pre>
                             </CardContent>
-                            <Typography gutterBottom variant="h6" component="h2">
-                                        {item.CompanyName}
-                            </Typography>
-                            <Typography gutterBottom variant="h6" component="h2">
-                                        {moment(item.date_).fromNow()}
-                            </Typography>
+                            <div className={classes.info}>
+                                <a>{item.CompanyName}</a> 
+                                <a className={classes.date}> {moment(item.date_).fromNow()}</a>
+                            </div> 
+
                     </CardActionArea>                
                 </Card>
             )}            

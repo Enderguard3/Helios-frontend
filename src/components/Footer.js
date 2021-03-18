@@ -8,6 +8,7 @@ const useStyle = makeStyles(theme => ({
         backgroundColor : '#935d5d',
         position: 'absolute',
         width: '99%',
+        marginTop: "20px"
     },
     subFooter: {
         backgroundColor: '#935d5d',

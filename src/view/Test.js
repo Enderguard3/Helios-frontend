@@ -1,22 +1,29 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import News from '../components/News'
-import {makeStyles} from "@material-ui/core";
+import PopupNews from '../components/PopupNews';
+import { makeStyles } from '@material-ui/styles';
 
 
-const style = makeStyles(theme => ({
+const useStyle = makeStyles(theme => {
+    
+}) 
 
-}))
 
 const Test = () => {
 
-    const classes = style()
+    const classes = useStyle()
 
-    return <div>
-        <Navbar name={"Test"} />
-        <News/>
-        <Footer />
-    </div>
+    return (
+        <div>
+            <Navbar name={"Test"} />
+
+                <News/>
+                <PopupNews />
+
+            <Footer />
+        </div>
+    )
 }
 
 export default Test
