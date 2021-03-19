@@ -5,15 +5,17 @@ const useStyle = makeStyles({
         backgroundColor : '#935d5d',
         position: 'static',
         width: '100%',
-        marginTop: "20px",
+        marginTop: "15px",
         bottom: 0
     },
     subFooter: {
         backgroundColor: '#935d5d',
-        marginTop: '8px'
+        marginLeft: '20px'
     },
     img: {
         float: 'right',
+        maxWidth: '10%',
+        marginRight: '40px',
     },
     title: {
         textAlign: 'center',
@@ -50,16 +52,19 @@ const Footer = () => {
 
                 </Grid>
 
-                <Grid className={classes.subFooter} item xs={12}>
-                    <Typography variant="body2" color="textSecondary" align="center">
-                        {'Copyright © '}
-                        <Link color="inherit" href="https://material-ui.com/">
-                            LUD'di@g
-                        </Link>{' '}
-                        {new Date().getFullYear()}
-                        {'.'}
-                    </Typography>
-                    <img className={classes.img} src="../../assets/icons/luddiag.png" alt="Logo luddiag" width="488" />
+                <Grid className={classes.subFooter} item xs={12} container>
+                    <Grid xs={10}>
+                        <Typography variant="body2" color="textSecondary" align="center">
+                            {'Copyright © '}
+                            <Link color="inherit" href="https://material-ui.com/">
+                                LUD'di@g
+                            </Link>{' '}
+                            {new Date().getFullYear()}
+                            {'.'}
+                        </Typography>
+                    </Grid>
+                        <img className={classes.img} src="luddiag.png" alt="Logo luddiag" width="150" />
+
                 </Grid>
             </Grid>
         </div>

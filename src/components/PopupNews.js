@@ -20,12 +20,18 @@ const useStyle = makeStyles(theme => ({
     paper: {
         marginTop: theme.spacing(8),
         display: 'flex',
+        width: '500px',
         flexDirection: 'column',
         alignItems: 'center',
+        backgroundColor: 'white',
+        borderStyle: 'solid',
+        borderWidth: '2px',
+        borderRadius: '10px'
     },
     form: {
-        width: '100%',
+        width: '90%',
         marginTop: theme.spacing(1),
+
     },
     submit: {
         margin: theme.spacing(3, 0, 2),
@@ -67,7 +73,7 @@ const PopupNews = ({from, title, content}) => {
                     <CssBaseline />
                     <div className={classes.paper}>
                         <Typography component="h1" variant="h5">
-                            Add news
+                          Add news
                         </Typography>
                         <form className={classes.form} noValidate>
                             <TextField

@@ -3,7 +3,7 @@ import moment from 'moment'
 const getNews = limit => {
     /*
     return axios.get('URL_BACK', {
-            editor: editor
+            editor: editor name jointure vers id de la table editor
             limit: limit
         })
      */
