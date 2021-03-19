@@ -20,7 +20,6 @@ const Dashboard = () => {
     const classes = style()
     const history = useHistory()
 
-
     return (
         <div>
             <Navbar name={"Dashboard"} />
@@ -31,7 +30,7 @@ const Dashboard = () => {
                     </Typography>
                     <Barchart className={classes.barchart} />
                 </Grid>
-                <Grid item xs >
+                <Grid item xs={4}>
                     <Typography variant="h4">
                         <Link onClick={() => {history.push('News')}}>
                         News :

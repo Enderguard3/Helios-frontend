@@ -1,9 +1,6 @@
 import {makeStyles, Grid, Typography, Link } from '@material-ui/core'
-import { fontFamily, fontWeight, grid } from '@material-ui/system'
 
-
-const useStyle = makeStyles(theme => ({
-
+const useStyle = makeStyles({
     footer : {
         backgroundColor : '#935d5d',
         position: 'absolute',
@@ -22,12 +19,9 @@ const useStyle = makeStyles(theme => ({
         textAlign: 'center',
         fontFamily: 'system-ui' 
     }
-
-}))
+})
 
 const Footer = () => {
-
-
     const classes = useStyle()
 
     return (
@@ -65,11 +59,9 @@ const Footer = () => {
                         {new Date().getFullYear()}
                         {'.'}
                     </Typography>
-                    <img className= {classes.img} src="../../assets/icons/luddiag.png" alt="Logo luddiag" width="150"></img>
+                    <img className={classes.img} src="../../assets/icons/luddiag.png" alt="Logo luddiag" width="150"/>
                 </Grid>
             </Grid>
-
-
         </div>
     )
 }
