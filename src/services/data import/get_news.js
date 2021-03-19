@@ -3,6 +3,7 @@ import moment from 'moment'
 const getNews = limit => {
     /*
     return axios.get('URL_BACK', {
+            editor: editor
             limit: limit
         })
      */

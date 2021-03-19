@@ -33,7 +33,7 @@ const useStyle = makeStyles(theme => ({
 
 }))
 
-const PopupNews = () => {
+const PopupNews = ({from, title, content}) => {
     const classes = useStyle()
     const [open, setOpen] = useState(false)
 
@@ -52,7 +52,7 @@ const PopupNews = () => {
                 variant="contained"
                 className={classes.button}
                 onClick={handleOpen}>
-                {<AddBox />}
+                {from === 'news' ? <AddBox /> : null}
             </IconButton>
             <Modal
                 className={classes.modal}
@@ -79,7 +79,8 @@ const PopupNews = () => {
                                 label="Title"
                                 name="Title"
                                 autoComplete="Title"
-                                autoFocus />
+                                autoFocus
+                                value={title}/>
                             <TextField
                                 variant="outlined"
                                 margin="normal"

@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 const style = makeStyles(theme => ({
     title: {
         marginTop: '3%',
-        marginBottom: '2.7%',
+        marginBottom: '2.2%',
     }
 }))
 

@@ -40,7 +40,7 @@ const News = () => {
                 </IconButton>
             </Grid>
             <Grid item xs={4} className={classes.btnAdd}>
-                <PopupNews />
+                <PopupNews from='news' />
             </Grid>
         </Grid>
 
