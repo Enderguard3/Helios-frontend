@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import News from '../components/News'
+import NewsComponent from '../components/NewsComponent'
 import PopupNews from '../components/PopupNews';
 
 const Test = () => {
@@ -8,7 +8,7 @@ const Test = () => {
         <div>
             <Navbar name={"Test"} />
 
-                <News/>
+                <NewsComponent/>
                 <PopupNews />
 
             <Footer />

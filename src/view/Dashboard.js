@@ -2,17 +2,14 @@ import {Grid, Typography} from "@material-ui/core"
 import {makeStyles, Link} from "@material-ui/core";
 import {useHistory} from "react-router-dom"
 
-
 import Navbar from '../components/Navbar'
-import Barchart from "../components/Chart/Barchart"
-import News from "../components/News"
+import NewsComponent from "../components/NewsComponent"
+import Footer from "../components/Footer";
 
 const style = makeStyles(theme => ({
-    barchart: {
-        marginTop: '5%'
-    },
-    news: {
-        marginTop: '5%',
+    title: {
+        marginTop: '3%',
+        marginBottom: '2.7%',
     }
 }))
 
@@ -23,22 +20,26 @@ const Dashboard = () => {
     return (
         <div>
             <Navbar name={"Dashboard"} />
+
             <Grid container>
                 <Grid item xs={8}>
-                    <Typography variant="h4">
-                        Ratings :
-                    </Typography>
-                    <Barchart className={classes.barchart} />
-                </Grid>
-                <Grid item xs={4}>
-                    <Typography variant="h4">
-                        <Link onClick={() => {history.push('News')}}>
-                        News :
+                    <Typography variant="h4" className={classes.title}>
+                        <Link onClick={() => {history.push('Rating')}}>
+                            Rating :
                         </Link>
                     </Typography>
-                    <News className={classes.news} />
+                </Grid>
+                <Grid item xs={4}>
+                    <Typography variant="h4" className={classes.title}>
+                        <Link onClick={() => {history.push('News')}}>
+                            News :
+                        </Link>
+                    </Typography>
+                    <NewsComponent nbNews={3}/>
                 </Grid>
             </Grid>
+
+            <Footer />
         </div>
     )
 }

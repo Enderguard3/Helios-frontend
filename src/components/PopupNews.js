@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Button ,makeStyles, Modal, Backdrop, Container, CssBaseline, Typography, TextField} from '@material-ui/core';
+import {Button, makeStyles, Modal, Backdrop, Container, CssBaseline, Typography, TextField, IconButton}
+    from '@material-ui/core';
 import AddBox from '@material-ui/icons/AddBox'
 
 
@@ -21,15 +22,14 @@ const useStyle = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-      },
-
-      form: {
+    },
+    form: {
         width: '100%',
         marginTop: theme.spacing(1),
-      },
-      submit: {
+    },
+    submit: {
         margin: theme.spacing(3, 0, 2),
-      },
+    },
 
 }))
 
@@ -48,11 +48,12 @@ const PopupNews = () => {
 
     return (
         <div>
-            <Button
+            <IconButton
                 variant="contained"
                 className={classes.button}
-                startIcon={<AddBox />}
-                onClick={handleOpen} />
+                onClick={handleOpen}>
+                {<AddBox />}
+            </IconButton>
             <Modal
                 className={classes.modal}
                 open={open}

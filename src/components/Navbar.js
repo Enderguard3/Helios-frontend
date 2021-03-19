@@ -1,14 +1,12 @@
 import {useState} from "react"
 import {useHistory} from "react-router-dom"
-import {AppBar, Toolbar, Typography, IconButton, Divider, List, ListItem,
-    ListItemIcon, ListItemText, Drawer, makeStyles} from '@material-ui/core'
+import {AppBar, Toolbar, Typography, IconButton, Divider, List, ListItem, ListItemIcon, ListItemText, Drawer,
+    makeStyles} from '@material-ui/core'
 import {Home, CommentOutlined, AccountCircle, InsertChart, Menu, ArrowLeft, Announcement} from '@material-ui/icons'
-
 
 const style = makeStyles(theme => ({
     menu: {
         marginRight: theme.spacing(2)
-
     },
     typo: {
         flexGrow: 1
@@ -18,7 +16,7 @@ const style = makeStyles(theme => ({
         alignItems: 'center',
         justifyContent: 'flex-end',
     },
-    appBarColor: {
+    appBar: {
         backgroundColor: '#935d5d'
     }
 }))
@@ -37,7 +35,7 @@ const Navbar = ({name}) => {
 
     return (
         <div>
-            <AppBar position="static" className = {classes.appBarColor}>
+            <AppBar position="static" className = {classes.appBar}>
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="menu" className={classes.menu}
                         onClick={() => setOpenDrawer(true)}>
@@ -64,8 +62,8 @@ const Navbar = ({name}) => {
                             {name: "Dashboard", icon: <Home />},
                             {name: "Rating", icon: <CommentOutlined />},
                             {name: "Leaderboard", icon: <InsertChart />},
-                            {name: "Test", icon: null},
                             {name: "News", icon: <Announcement />},
+                            {name: "Test", icon: null},
                         ].map(({name, icon}) => (
                             <ListItem button key={name} onClick={() => handleClickPage(name)}>
                                 <ListItemIcon>

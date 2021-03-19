@@ -3,13 +3,13 @@ import {makeStyles, Grid, Typography, Link } from '@material-ui/core'
 const useStyle = makeStyles({
     footer : {
         backgroundColor : '#935d5d',
-        position: 'absolute',
-        width: '99%',
-        marginTop: "20px"
+        position: 'static',
+        width: '100%',
+        marginTop: "20px",
+        bottom: 0
     },
     subFooter: {
         backgroundColor: '#935d5d',
-        padding: '8px 16px 8px 16px',
         marginTop: '8px'
     },
     img: {
@@ -59,7 +59,7 @@ const Footer = () => {
                         {new Date().getFullYear()}
                         {'.'}
                     </Typography>
-                    <img className={classes.img} src="../../assets/icons/luddiag.png" alt="Logo luddiag" width="150"/>
+                    <img className={classes.img} src="../../assets/icons/luddiag.png" alt="Logo luddiag" width="488" />
                 </Grid>
             </Grid>
         </div>

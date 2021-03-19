@@ -1,4 +1,4 @@
-import {Card, CardActionArea, CardContent, Typography, makeStyles} from "@material-ui/core"
+import {Card, CardActionArea, CardContent, Typography, makeStyles, Divider} from "@material-ui/core"
 import React, {useState} from 'react'
 import moment from 'moment'
 import {useHistory} from "react-router-dom"
@@ -7,7 +7,7 @@ import getNews from "../services/data import/get_news";
 const useStyle = makeStyles(theme => ({
     content: {
         lineHeight: 1,
-        height: '12em',
+        height: '7em',
         overflow: 'hidden',
         whiteSpace: 'pre-wrap'
     },
@@ -25,13 +25,19 @@ const useStyle = makeStyles(theme => ({
     }
 }))
 
-const News = () => {
+const NewsComponent = ({nbNews}) => {
     const classes = useStyle();
-    const [news, setNews] = useState(getNews(3));
+    const [news, setNews] = useState(getNews(nbNews));
     const history = useHistory()
 
     const handleClickPage = (id) => {
-        history.push('News_details')
+        console.log(id)
+        history.push({
+            pathname: 'News_details',
+            state: {
+                id
+            }
+        })
     }
 
     return (
@@ -52,11 +58,12 @@ const News = () => {
                                     <p className={classes.date}> {moment(item.date).fromNow()}</p>
                                 </div>
                             </CardContent>
-                    </CardActionArea>                
+                    </CardActionArea>
+                    <Divider />
                 </Card>
-            )}            
+            )}
         </div>   
     )
 }
 
-export default News
+export default NewsComponent
