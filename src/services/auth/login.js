@@ -8,12 +8,11 @@ const login_auth_token = (company, login, password) => {
      */
 
     let res = {}
-
     if(company === 'company' && login === 'login' && password === 'password')
         res = {
             token: 'ioerffjizoefijzpefjzeoijqzoefjqzeo'
         }
-    console.log(res.token)
+
     if (res.token === undefined)
         return 1
 

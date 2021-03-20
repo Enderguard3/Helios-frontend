@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {Button, makeStyles, Modal, Backdrop, Container, CssBaseline, Typography, TextField, IconButton}
     from '@material-ui/core';
 import AddBox from '@material-ui/icons/AddBox'
+import {useHistory} from 'react-router-dom'
+import postNews from "../services/data import/post_news";
 
 
 const useStyle = makeStyles(theme => ({
@@ -39,10 +41,27 @@ const useStyle = makeStyles(theme => ({
 
 }))
 
-const PopupNews = ({from, title, content}) => {
+const PopupNews = ({from, title_init, content_init}) => {
     const classes = useStyle()
     const [open, setOpen] = useState(false)
+    const [title, setTitle] = useState(title_init)
+    const [content, setContent] = useState(content_init)
+    const history = useHistory()
 
+    const handleSubmit = event => {
+        event.preventDefault()
+
+        let res = postNews(title, content)
+        if (res !== -1)
+            history.push({
+                pathname: 'News_details',
+                state: {
+                    id: res
+                }
+            })
+
+        handleClose()
+    }
 
     const handleOpen = () => {
         setOpen(true)
@@ -53,6 +72,7 @@ const PopupNews = ({from, title, content}) => {
     }
 
     return (
+        // TODO : Alan, /!\ modal give a warning : findDOMNode is deprecated in StrictMode
         <div>
             <IconButton
                 variant="contained"
@@ -75,7 +95,7 @@ const PopupNews = ({from, title, content}) => {
                         <Typography component="h1" variant="h5">
                           Add news
                         </Typography>
-                        <form className={classes.form} noValidate>
+                        <form className={classes.form} noValidate onSubmit={handleSubmit}>
                             <TextField
                                 variant="outlined"
                                 margin="normal"
@@ -86,7 +106,8 @@ const PopupNews = ({from, title, content}) => {
                                 name="Title"
                                 autoComplete="Title"
                                 autoFocus
-                                value={title}/>
+                                value={title_init}
+                                onChange={event => setTitle(event.target.value)} />
                             <TextField
                                 variant="outlined"
                                 margin="normal"
@@ -96,7 +117,9 @@ const PopupNews = ({from, title, content}) => {
                                 label="Content"
                                 type="Content"
                                 id="Content"
-                                autoComplete="current-password" />
+                                autoComplete="current-password"
+                                value={content}
+                                onChange={event => setContent(event.target.value)}  />
                             <Button
                                 type="submit"
                                 fullWidth

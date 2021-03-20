@@ -59,7 +59,7 @@ const Footer = () => {
                     </h4>
                 </Grid>
                 <Grid className={classes.subFooter} item xs={12}>
-                    <Grid xs={10}>
+                    <Grid>
                         <Typography variant="body2" color="textSecondary" align="center">
                             {'Copyright © '}
                             <Link color="inherit" href="https://material-ui.com/">
