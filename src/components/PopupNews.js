@@ -5,6 +5,7 @@ import AddBox from '@material-ui/icons/AddBox'
 import EditIcon from '@material-ui/icons/Edit';
 import {useHistory} from 'react-router-dom'
 import postNews from "../services/data import/post_news"
+import updateNews from "../services/data import/update_news";
 
 const useStyle = makeStyles(theme => ({
     button : {
@@ -41,7 +42,7 @@ const useStyle = makeStyles(theme => ({
 
 }))
 
-const PopupNews = ({from, title_init, content_init}) => {
+const PopupNews = ({from, title_init, content_init, id}) => {
     const classes = useStyle()
     const [open, setOpen] = useState(false)
     const [title, setTitle] = useState(title_init)
@@ -51,14 +52,25 @@ const PopupNews = ({from, title_init, content_init}) => {
     const handleSubmit = event => {
         event.preventDefault()
 
-        let res = postNews(title, content)
-        if (res !== -1)
+        if (from === 'news') {
+            let res = postNews(title, content)
+            if (res !== -1)
+                history.push({
+                    pathname: 'News_details',
+                    state: {
+                        id: res
+                    }
+                })
+        }
+        else {
+            updateNews(title, content, id)
             history.push({
                 pathname: 'News_details',
                 state: {
-                    id: res
+                    id
                 }
             })
+        }
 
         handleClose()
     }
@@ -73,6 +85,7 @@ const PopupNews = ({from, title_init, content_init}) => {
 
     return (
         // TODO : Alan, /!\ modal give a warning : findDOMNode is deprecated in StrictMode
+        // TODO : content textarea multiline & taille fix & taille modale plus grande
         <div>
             <IconButton
                 variant="contained"
@@ -113,6 +126,7 @@ const PopupNews = ({from, title_init, content_init}) => {
                                 margin="normal"
                                 required
                                 fullWidth
+                                multiline
                                 name="Content"
                                 label="Content"
                                 type="Content"

@@ -74,7 +74,6 @@ const Login = () => {
                             label="Login"
                             name="login"
                             autoComplete="login"
-                            autoFocus
                             onChange={event => setLogin(event.target.value)} />
                         <TextField
                             variant="outlined"
