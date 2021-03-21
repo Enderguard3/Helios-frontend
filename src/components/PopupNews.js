@@ -13,9 +13,7 @@ const useStyle = makeStyles(theme => ({
         justifyContent: 'center'
     },
     modal: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
+        paddingRight: '500px',
     },
     modal_body: {
         color: '',
@@ -23,21 +21,21 @@ const useStyle = makeStyles(theme => ({
     paper: {
         marginTop: theme.spacing(8),
         display: 'flex',
-        width: '500px',
+        width: '900px',
+        height: '700px',
         flexDirection: 'column',
         alignItems: 'center',
         backgroundColor: 'white',
         borderStyle: 'solid',
-        borderWidth: '2px',
         borderRadius: '10px'
     },
     form: {
         width: '90%',
-        marginTop: theme.spacing(1),
 
     },
     submit: {
         margin: theme.spacing(3, 0, 2),
+        marginTop:'50%',
     },
 
 }))
@@ -134,6 +132,7 @@ const PopupNews = ({from, title_init, content_init, id}) => {
                                 autoComplete="current-password"
                                 value={content}
                                 onChange={event => setContent(event.target.value)}  />
+
                             <Button
                                 type="submit"
                                 fullWidth

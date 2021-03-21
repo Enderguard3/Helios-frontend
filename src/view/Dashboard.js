@@ -5,7 +5,6 @@ import {useHistory} from "react-router-dom"
 import Navbar from '../components/Navbar'
 import NewsComponent from "../components/NewsComponent"
 import Footer from "../components/Footer"
-
 import getNews from "../services/data import/get_news"
 
 const style = makeStyles(theme => ({
