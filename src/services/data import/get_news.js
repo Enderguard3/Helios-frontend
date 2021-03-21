@@ -7,6 +7,8 @@ const getNews = limit => {
             limit: limit
         })
      */
+    if (limit === undefined)
+        limit = 17
 
     let news = []
     for (let i = 0; i < limit; i++)

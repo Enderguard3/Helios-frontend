@@ -1,10 +1,12 @@
 import {Grid, Typography} from "@material-ui/core"
-import {makeStyles, Link} from "@material-ui/core";
+import {makeStyles, Link} from "@material-ui/core"
 import {useHistory} from "react-router-dom"
 
 import Navbar from '../components/Navbar'
 import NewsComponent from "../components/NewsComponent"
-import Footer from "../components/Footer";
+import Footer from "../components/Footer"
+
+import getNews from "../services/data import/get_news"
 
 const style = makeStyles(theme => ({
     title: {
@@ -16,6 +18,7 @@ const style = makeStyles(theme => ({
 const Dashboard = () => {
     const classes = style()
     const history = useHistory()
+    const news = getNews(3)
 
     return (
         <div>
@@ -35,7 +38,7 @@ const Dashboard = () => {
                             News :
                         </Link>
                     </Typography>
-                    <NewsComponent nbNews={3}/>
+                    <NewsComponent news={news}/>
                 </Grid>
             </Grid>
 

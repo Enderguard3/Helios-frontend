@@ -2,7 +2,6 @@ import {Card, CardActionArea, CardContent, Typography, makeStyles, Divider} from
 import React, {useState} from 'react'
 import moment from 'moment'
 import {useHistory} from "react-router-dom"
-import getNews from "../services/data import/get_news";
 
 const useStyle = makeStyles(theme => ({
     content: {
@@ -25,9 +24,8 @@ const useStyle = makeStyles(theme => ({
     }
 }))
 
-const NewsComponent = ({nbNews}) => {
+const NewsComponent = ({news}) => {
     const classes = useStyle();
-    const [news, setNews] = useState(getNews(nbNews));
     const history = useHistory()
 
     const handleClickPage = (id) => {

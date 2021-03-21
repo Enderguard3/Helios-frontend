@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import {Button, makeStyles, Modal, Backdrop, Container, CssBaseline, Typography, TextField, IconButton}
     from '@material-ui/core';
 import AddBox from '@material-ui/icons/AddBox'
+import EditIcon from '@material-ui/icons/Edit';
 import {useHistory} from 'react-router-dom'
-import postNews from "../services/data import/post_news";
-
+import postNews from "../services/data import/post_news"
 
 const useStyle = makeStyles(theme => ({
     button : {
@@ -78,7 +78,7 @@ const PopupNews = ({from, title_init, content_init}) => {
                 variant="contained"
                 className={classes.button}
                 onClick={handleOpen}>
-                {from === 'news' ? <AddBox /> : null}
+                {from === 'news' ? <AddBox /> : <EditIcon />}
             </IconButton>
             <Modal
                 className={classes.modal}
