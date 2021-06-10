@@ -2,10 +2,11 @@ import {Grid, Typography} from "@material-ui/core"
 import {makeStyles, Link} from "@material-ui/core"
 import {useHistory} from "react-router-dom"
 
-import Navbar from '../components/Navbar'
+import Navbar from "../components/Navbar"
 import NewsComponent from "../components/NewsComponent"
 import Footer from "../components/Footer"
 import getNews from "../services/data import/get_news"
+import Barchart from "../components/Chart/Barchart"
 
 const style = makeStyles(theme => ({
     title: {
@@ -30,6 +31,7 @@ const Dashboard = () => {
                             Rating :
                         </Link>
                     </Typography>
+                    <Barchart from={"dashboard"}/>
                 </Grid>
                 <Grid item xs={4}>
                     <Typography variant="h4" className={classes.title}>
