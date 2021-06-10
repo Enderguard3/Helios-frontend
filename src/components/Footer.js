@@ -69,7 +69,7 @@ const Footer = () => {
                             {'.'}
                         </Typography>
                     </Grid>
-                    <img className={classes.img} src="luddiag.png" alt="Logo luddiag" width="150" />
+                    <img className={classes.img} src="luddiag.png" alt="Logo luddiag" width={"150"} />
                 </Grid>
             </Grid>
         </div>

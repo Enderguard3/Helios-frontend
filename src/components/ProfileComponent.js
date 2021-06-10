@@ -50,59 +50,57 @@ const useStyle = makeStyles({
     }
 })
 
-const ProfileComponent = ({news}) => {
-    
+const ProfileComponent = () => {
     const classes = useStyle();
 
     return (
         <Container fi>
-        <div className={classes.box}>
-            <div className={classes.card}>
-                <div className={classes.upperContainer}>
-                    <div className={classes.imageContainer}>
-                        <img src={logo} alt="profile img" height="100px" width="100px"/>
+            <div className={classes.box}>
+                <div className={classes.card}>
+                    <div className={classes.upperContainer}>
+                        <div className={classes.imageContainer}>
+                            <img src={logo} alt="profile img" height="100px" width="100px"/>
+                        </div>
+                    </div>
+                    <div className={classes.lowerContainer}>
+                        <Grid container spacing={6}>
+                            <Grid item xs={12}>
+                                <Paper>
+                                    Nom entreprise
+                                </Paper>
+                            </Grid>
+                            <Grid item xs={6} sm={4}>
+                                <Paper
+                                elevation={3}
+                                variant="outlined">
+                                    Followers
+                                </Paper>
+                            </Grid>
+                            <Grid item xs={6} sm={4}>
+                                <Paper
+                                elevation={3}
+                                variant="outlined">
+                                    Posts
+                                </Paper>
+                            </Grid>
+                            <Grid item xs={6} sm={4}>
+                                <Paper
+                                elevation={3}
+                                variant="outlined">
+                                    Commentaire
+                                </Paper>
+                            </Grid>
+                        </Grid>
+                        <div>Localisation siège sociale</div>
+                        <div>Email</div>
+                        <div>Mot de passe</div>
+                        <Button variant="contained" color="primary">
+                            Modifier
+                        </Button>
                     </div>
                 </div>
-                <div className={classes.lowerContainer}>
-                    <Grid container spacing={6}>
-                        <Grid item xs={12}>
-                            <Paper>
-                                Nom entreprise
-                            </Paper>
-                        </Grid>
-                        <Grid item xs={6} sm={4}>
-                            <Paper
-                            elevation={3} 
-                            variant="outlined">
-                                Followers
-                            </Paper>
-                        </Grid>
-                        <Grid item xs={6} sm={4}>
-                            <Paper                        
-                            elevation={3} 
-                            variant="outlined">
-                                Posts
-                            </Paper>
-                        </Grid>
-                        <Grid item xs={6} sm={4}>
-                            <Paper                        
-                            elevation={3} 
-                            variant="outlined">
-                                Commentaire
-                            </Paper>
-                        </Grid>
-                    </Grid>
-                    <div>Localisation siège sociale</div>
-                    <div>Email</div>
-                    <div>Mot de passe</div>
-                    <Button variant="contained" color="primary">
-                        Modifier
-                    </Button>
-                </div>
             </div>
-        </div>
         </Container>
-        
     )
 }
 

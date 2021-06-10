@@ -1,7 +1,5 @@
-
 import React, {useState} from 'react';
-import {Button, makeStyles, Dialog, DialogTitle, DialogContent, TextField,IconButton}
-    from '@material-ui/core';
+import {Button, makeStyles, Dialog, DialogTitle, DialogContent, TextField,IconButton} from '@material-ui/core';
 import AddBox from '@material-ui/icons/AddBox'
 import EditIcon from '@material-ui/icons/Edit';
 import {useHistory} from 'react-router-dom'
@@ -12,9 +10,6 @@ const useStyle = makeStyles(theme => ({
     button : {
         color: '#935d5d',
         justifyContent: 'center'
-    },
-    modal_body: {
-        color: '',
     },
     paper: {
         marginTop: theme.spacing(8),
@@ -62,9 +57,7 @@ const PopupNews = ({from, title_init, content_init, id}) => {
             updateNews(title, content, id)
             history.push({
                 pathname: 'News_details',
-                state: {
-                    id
-                }
+                state: {id}
             })
         }
 
@@ -116,7 +109,6 @@ const PopupNews = ({from, title_init, content_init, id}) => {
                             autoComplete="current-password"
                             value={content}
                             onChange={event => setContent(event.target.value)}  />
-
                         <Button
                             type="submit"
                             fullWidth
@@ -127,10 +119,9 @@ const PopupNews = ({from, title_init, content_init, id}) => {
                         </Button>
                     </form>
                 </DialogContent>
-
             </Dialog>
         </div>
-    );
+    )
 }
 
 export default PopupNews

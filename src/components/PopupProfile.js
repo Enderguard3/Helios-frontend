@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react';
 import {Button, makeStyles, Dialog, DialogTitle, DialogContent, TextField,IconButton}
     from '@material-ui/core';
@@ -12,9 +11,7 @@ const useStyle = makeStyles(theme => ({
         color: '#935d5d',
         justifyContent: 'center'
     },
-    modal_body: {
-        color: '',
-    },
+
     paper: {
         marginTop: theme.spacing(8),
         display: 'flex',
@@ -46,26 +43,16 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
 
     const handleSubmit = event => {
         event.preventDefault()
-
-            updateProfile(title, content, id)
-            history.push({
-                pathname: 'Profile',
-                state: {
-                    id
-                }
-            })
-
-
+        updateProfile(title, content, id)
+        history.push({
+            pathname: 'Profile',
+            state: {id}
+        })
         handleClose()
     }
 
-    const handleOpen = () => {
-        setOpen(true)
-    }
-
-    const handleClose = () => {
-        setOpen(false)
-    }
+    const handleOpen = () => {setOpen(true)}
+    const handleClose = () => {setOpen(false)}
 
     return (
         <div>
@@ -104,7 +91,6 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
                                 autoComplete="current-password"
                                 value={content}
                                 onChange={event => setContent(event.target.value)}  />
-
                             <Button
                                 type="submit"
                                 fullWidth
@@ -115,10 +101,9 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
                             </Button>
                         </form>
                 </DialogContent>
-
             </Dialog>
         </div>
-      );
+      )
 }
 
 export default PopupProfile

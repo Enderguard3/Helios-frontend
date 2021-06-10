@@ -23,7 +23,6 @@ const Dashboard = () => {
     return (
         <div>
             <Navbar name={"Dashboard"} />
-
             <Grid container>
                 <Grid item xs={8}>
                     <Typography variant="h4" className={classes.title}>
@@ -42,7 +41,6 @@ const Dashboard = () => {
                     <NewsComponent news={news}/>
                 </Grid>
             </Grid>
-
             <Footer />
         </div>
     )
