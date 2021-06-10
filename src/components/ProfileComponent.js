@@ -1,4 +1,4 @@
-import { makeStyles, Container, Grid, Paper} from "@material-ui/core"
+import { makeStyles, Container, Grid, Paper, Button} from "@material-ui/core"
 import React from 'react'
 import {useHistory} from "react-router-dom"
 import logo from "../assets/brandlogo/logoAsmodee.png"
@@ -102,7 +102,9 @@ const ProfileComponent = ({news}) => {
                     <div>Localisation siège sociale</div>
                     <div>Email</div>
                     <div>Mot de passe</div>
-                    <button className={classes.btn}>Test</button>
+                    <Button variant="contained" color="primary">
+                        Modifier
+                    </Button>
                 </div>
             </div>
         </div>
