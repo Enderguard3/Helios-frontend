@@ -1,18 +1,11 @@
 import {createRef, useEffect} from "react"
 import getChartDashboard from "../../services/data import/get_chart_dashboard"
+import getChartRating from "../../services/data import/get_chart_rating"
 import Chart from 'chart.js'
 
 const Barchart = ({from}) => {
     let chart = createRef()
-    let data = {
-        labels: ["Jan", "Feb", "March", "April", "May"],
-        datasets: [
-            {
-                label: "Ratings",
-                data: [86, 67, 91, 105, 100],
-            }
-        ]
-    }
+    let data = {}
 
     if (from === "dashboard") {
         let chartData = getChartDashboard()
@@ -27,7 +20,20 @@ const Barchart = ({from}) => {
         }
     }
     else if (from === "rating") {
-        data = {}
+        let chartData = getChartRating()
+        data = {
+            labels: chartData.map(x => x.criteria),
+            datasets: [
+                {
+                    label: "Game",
+                    data: chartData.map(x => x.game)
+                },
+                {
+                    label: "Average",
+                    data: chartData.map(x => x.avg)
+                }
+            ]
+        }
     }
     
     useEffect(() => {

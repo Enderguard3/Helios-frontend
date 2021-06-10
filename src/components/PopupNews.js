@@ -82,8 +82,6 @@ const PopupNews = ({from, title_init, content_init, id}) => {
     }
 
     return (
-        // TODO : Alan, /!\ modal give a warning : findDOMNode is deprecated in StrictMode
-        // TODO : content textarea multiline & taille fix & taille modale plus grande
         <div>
             <IconButton
                 variant="contained"
