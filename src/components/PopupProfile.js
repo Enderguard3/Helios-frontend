@@ -47,7 +47,7 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
         event.preventDefault()
 
 
-            updateNews(title, content, id)
+            updateProfile(title, content, id)
             history.push({
                 pathname: 'Profile',
                 state: {
@@ -75,7 +75,7 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
                 onClick={handleOpen}>
                 {from === 'news' ? <AddBox /> : <EditIcon />}
             </IconButton>
-            <Dialog onClose={handleClose} aria-labelledby="form-dialog-title">
+            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle>Add news</DialogTitle>
                 <DialogContent>
                 <form className={classes.form} noValidate onSubmit={handleSubmit}>
@@ -119,7 +119,7 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
             </Dialog>
         </div>
       );
-    
+    }  
 
 
 export default PopupProfile

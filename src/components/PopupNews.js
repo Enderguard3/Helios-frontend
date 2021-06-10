@@ -1,5 +1,6 @@
+
 import React, {useState} from 'react';
-import {Button, makeStyles, Modal, Backdrop, Container, CssBaseline, Typography, TextField, IconButton}
+import {Button, makeStyles, Dialog, DialogTitle, DialogContent, TextField,IconButton}
     from '@material-ui/core';
 import AddBox from '@material-ui/icons/AddBox'
 import EditIcon from '@material-ui/icons/Edit';
@@ -11,9 +12,6 @@ const useStyle = makeStyles(theme => ({
     button : {
         color: '#935d5d',
         justifyContent: 'center'
-    },
-    modal: {
-        paddingRight: '500px',
     },
     modal_body: {
         color: '',
@@ -89,22 +87,10 @@ const PopupNews = ({from, title_init, content_init, id}) => {
                 onClick={handleOpen}>
                 {from === 'news' ? <AddBox /> : <EditIcon />}
             </IconButton>
-            <Modal
-                className={classes.modal}
-                open={open}
-                onClose={handleClose}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                  timeout: 500,
-                }} >
-                <Container component="main" maxWidth="xs">
-                    <CssBaseline />
-                    <div className={classes.paper}>
-                        <Typography component="h1" variant="h5">
-                          Add news
-                        </Typography>
-                        <form className={classes.form} noValidate onSubmit={handleSubmit}>
+            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <DialogTitle>Add news</DialogTitle>
+                <DialogContent>
+                <form className={classes.form} noValidate onSubmit={handleSubmit}>
                             <TextField
                                 variant="outlined"
                                 margin="normal"
@@ -140,9 +126,9 @@ const PopupNews = ({from, title_init, content_init, id}) => {
                                 submit
                             </Button>
                         </form>
-                    </div>
-                </Container>
-            </Modal>
+                </DialogContent>
+
+            </Dialog>
         </div>
       );
 }
