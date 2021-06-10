@@ -119,6 +119,7 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
             </Dialog>
         </div>
       );
-}
+    
 
-export default PopupNews
+
+export default PopupProfile

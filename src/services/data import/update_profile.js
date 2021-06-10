@@ -1,5 +1,3 @@
-import moment from "moment";
-
 const updateProfile = (title, content, id) => {
     /*
     axios.update('URL_BACK_NEWS/' + id + '/', {
@@ -11,8 +9,13 @@ const updateProfile = (title, content, id) => {
     return {
         title: title + ' ' + id,
         content: content,
+        email: "email",
+        siege:'1 Rue de Paris',
         CompanyName: '© 2021 Hasbro',
-        date: moment().format()
+        nbPost:"3",
+        nbfollower:"48",
+        nbCommentaire:"54",
+
     }
 }
 
