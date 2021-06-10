@@ -3,7 +3,7 @@ import getChartDashboard from "../../services/data import/get_chart_dashboard"
 import getChartRating from "../../services/data import/get_chart_rating"
 import Chart from 'chart.js'
 
-const Barchart = ({from}) => {
+const Barchart = ({from, game}) => {
     let chart = createRef()
     let data = {}
 
@@ -20,7 +20,7 @@ const Barchart = ({from}) => {
         }
     }
     else if (from === "rating") {
-        let chartData = getChartRating()
+        let chartData = getChartRating(game)
         data = {
             labels: chartData.map(x => x.criteria),
             datasets: [

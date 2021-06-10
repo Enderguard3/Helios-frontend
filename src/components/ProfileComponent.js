@@ -1,11 +1,8 @@
 import { makeStyles, Container, Grid, Paper, Button} from "@material-ui/core"
 import React from 'react'
-import {useHistory} from "react-router-dom"
 import logo from "../assets/brandlogo/logoAsmodee.png"
 
-
-
-const useStyle = makeStyles(theme => ({
+const useStyle = makeStyles({
     box:{
         display:'flex',
         width:'100%',
@@ -51,15 +48,11 @@ const useStyle = makeStyles(theme => ({
         border:'2px solid #8e00b9',
         padding:'auto'
     }
-
-}))
+})
 
 const ProfileComponent = ({news}) => {
     
     const classes = useStyle();
-    //const history = useHistory()
-
-
 
     return (
         <Container fi>

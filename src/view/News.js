@@ -50,7 +50,7 @@ const News = () => {
                 </IconButton>
             </Grid>
             <Grid item xs={4} className={classes.btnAdd}>
-                <PopupNews from='news' />
+                <PopupNews from='news' title_init={''} content_init={''}/>
             </Grid>
         </Grid>
 

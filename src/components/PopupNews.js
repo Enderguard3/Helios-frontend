@@ -88,49 +88,49 @@ const PopupNews = ({from, title_init, content_init, id}) => {
                 {from === 'news' ? <AddBox /> : <EditIcon />}
             </IconButton>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle>Add news</DialogTitle>
+                <DialogTitle>{ from === 'news' ? 'Add news' : 'Update news'}</DialogTitle>
                 <DialogContent>
-                <form className={classes.form} noValidate onSubmit={handleSubmit}>
-                            <TextField
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
-                                id="Title"
-                                label="Title"
-                                name="Title"
-                                autoComplete="Title"
-                                autoFocus
-                                value={title_init}
-                                onChange={event => setTitle(event.target.value)} />
-                            <TextField
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
-                                multiline
-                                name="Content"
-                                label="Content"
-                                type="Content"
-                                id="Content"
-                                autoComplete="current-password"
-                                value={content}
-                                onChange={event => setContent(event.target.value)}  />
+                    <form className={classes.form} noValidate onSubmit={handleSubmit}>
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="Title"
+                            label="Title"
+                            name="Title"
+                            autoComplete="Title"
+                            autoFocus
+                            value={title_init}
+                            onChange={event => setTitle(event.target.value)} />
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            multiline
+                            name="Content"
+                            label="Content"
+                            type="Content"
+                            id="Content"
+                            autoComplete="current-password"
+                            value={content}
+                            onChange={event => setContent(event.target.value)}  />
 
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                color="primary"
-                                className={classes.submit} >
-                                submit
-                            </Button>
-                        </form>
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            className={classes.submit} >
+                            submit
+                        </Button>
+                    </form>
                 </DialogContent>
 
             </Dialog>
         </div>
-      );
+    );
 }
 
 export default PopupNews

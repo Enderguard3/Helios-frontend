@@ -3,10 +3,10 @@ import React from 'react'
 import moment from 'moment'
 import {useHistory} from "react-router-dom"
 
-const useStyle = makeStyles(theme => ({
+const useStyle = makeStyles(detail => ({
     content: {
         lineHeight: 1,
-        height: '7em',
+        height: detail ? '' : '7em',
         overflow: 'hidden',
         whiteSpace: 'pre-wrap'
     },
@@ -24,17 +24,14 @@ const useStyle = makeStyles(theme => ({
     }
 }))
 
-const NewsComponent = ({news}) => {
-    const classes = useStyle();
+const NewsComponent = ({news, detail}) => {
+    const classes = useStyle(detail)
     const history = useHistory()
 
     const handleClickPage = (id) => {
-        console.log(id)
         history.push({
             pathname: 'News_details',
-            state: {
-                id
-            }
+            state: {id}
         })
     }
 
@@ -53,7 +50,7 @@ const NewsComponent = ({news}) => {
                                 </Typography>
                                 <div className={classes.info}>
                                     <p className={classes.company}>{item.CompanyName}</p>
-                                    <p className={classes.date}> {moment(item.date).fromNow()}</p>
+                                    <p className={classes.date}>{moment(item.date).fromNow()}</p>
                                 </div>
                             </CardContent>
                     </CardActionArea>

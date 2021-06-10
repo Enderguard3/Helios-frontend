@@ -37,7 +37,7 @@ const Rating = () => {
                 <Divider />
             </Grid>
             <Grid item xs={8}>
-                <Barchart from={"rating"}/>
+                <Barchart from={"rating"} game={game}/>
             </Grid>
             <Grid item xs={4}>
                 COMMENT
