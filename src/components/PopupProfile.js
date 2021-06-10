@@ -1,10 +1,11 @@
+
 import React, {useState} from 'react';
 import {Button, makeStyles, Dialog, DialogTitle, DialogContent, TextField,IconButton}
     from '@material-ui/core';
 import AddBox from '@material-ui/icons/AddBox'
 import EditIcon from '@material-ui/icons/Edit';
 import {useHistory} from 'react-router-dom'
-import uupdateProfile from "../services/data import/update_profile";
+import updateProfile from "../services/data import/update_profile";
 
 const useStyle = makeStyles(theme => ({
     button : {
@@ -46,7 +47,6 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
     const handleSubmit = event => {
         event.preventDefault()
 
-
             updateProfile(title, content, id)
             history.push({
                 pathname: 'Profile',
@@ -54,7 +54,7 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
                     id
                 }
             })
-        }
+
 
         handleClose()
     }
@@ -119,7 +119,6 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
             </Dialog>
         </div>
       );
-    }  
-
+}
 
 export default PopupProfile
