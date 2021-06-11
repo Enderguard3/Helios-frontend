@@ -60,10 +60,10 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
                 variant="contained"
                 className={classes.button}
                 onClick={handleOpen}>
-                {from === 'news' ? <AddBox /> : <EditIcon />}
+                {from === 'profile' ? <EditIcon /> : <EditIcon />}
             </IconButton>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle>Add news</DialogTitle>
+                <DialogTitle>Modify profile </DialogTitle>
                 <DialogContent>
                 <form className={classes.form} noValidate onSubmit={handleSubmit}>
                             <TextField

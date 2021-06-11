@@ -1,6 +1,7 @@
 import { makeStyles, Container, Grid, Paper, Button} from "@material-ui/core"
 import React from 'react'
 import logo from "../assets/brandlogo/logoAsmodee.png"
+import PopupProfile from "./PopupProfile"
 
 const useStyle = makeStyles({
     box:{
@@ -47,11 +48,19 @@ const useStyle = makeStyles({
         backgroundColor:'white',
         border:'2px solid #8e00b9',
         padding:'auto'
+    },
+    lowerBox:{
+        paddingTop:'100px',
+        paddingBottom:'30px'
+    },
+    spacing:{
+        paddingTop:'20px'
     }
 })
 
 const ProfileComponent = () => {
     const classes = useStyle();
+    
 
     return (
         <Container fi>
@@ -90,13 +99,34 @@ const ProfileComponent = () => {
                                     Commentaire
                                 </Paper>
                             </Grid>
+                            <Grid item xs={4}>
+                                <Paper
+                                elevation={3}
+                                variant="outlined">
+                                    nbFollowers
+                                </Paper>
+                            </Grid>
+                            <Grid item xs={4}>
+                                <Paper
+                                elevation={3}
+                                variant="outlined">
+                                    nbPosts
+                                </Paper>
+                            </Grid>
+                            <Grid item xs={4}>
+                                <Paper
+                                elevation={3}
+                                variant="outlined">
+                                    nbCommentaires
+                                </Paper>
+                            </Grid>
                         </Grid>
-                        <div>Localisation siège sociale</div>
-                        <div>Email</div>
-                        <div>Mot de passe</div>
-                        <Button variant="contained" color="primary">
-                            Modifier
-                        </Button>
+                        <div className={classes.lowerBox}>
+                            <div className={classes.spacing}>Localisation siège sociale </div>
+                            <div className={classes.spacing}>Email</div>
+                            <div className={classes.spacing}>Mot de passe</div>
+                        </div>
+                        <PopupProfile />
                     </div>
                 </div>
             </div>

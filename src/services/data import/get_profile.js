@@ -14,6 +14,6 @@ const getProfile = () => {
             nbCommentaire:"54",
         })
 
-    return news
+    return user
 }
 export default getProfile
