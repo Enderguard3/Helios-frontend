@@ -71,10 +71,10 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
                                 margin="normal"
                                 required
                                 fullWidth
-                                id="Title"
-                                label="Title"
-                                name="Title"
-                                autoComplete="Title"
+                                id="Loca"
+                                label="Localisation du siège sociale"
+                                name="Localisation du siège sociale"
+                                autoComplete="current-local"
                                 autoFocus
                                 value={title_init}
                                 onChange={event => setTitle(event.target.value)} />
@@ -84,10 +84,23 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
                                 required
                                 fullWidth
                                 multiline
-                                name="Content"
-                                label="Content"
-                                type="Content"
-                                id="Content"
+                                name="Email"
+                                label="Email"
+                                type="Email"
+                                id="Email"
+                                autoComplete="current-email"
+                                value={content}
+                                onChange={event => setContent(event.target.value)}  />
+                            <TextField
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                multiline
+                                name="Password"
+                                label="Mot de passe"
+                                type="Password"
+                                id="Password"
                                 autoComplete="current-password"
                                 value={content}
                                 onChange={event => setContent(event.target.value)}  />
