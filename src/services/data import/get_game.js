@@ -1,3 +1,5 @@
+import moment from "moment";
+
 const getGames = limit => {
     if (limit === undefined)
         limit = 10
@@ -7,9 +9,9 @@ const getGames = limit => {
         games.push({
             id: i,
             title: 'Title' + i,
-            desc: 'test long line --------------- ----------------- --------------- ----------------- ------------' +
-                '--------------- ----------------- --------------- ----------------- ------------\n' +
-                'line 2\nline 3\nline 4\nline 5\nline 6\nline 7\nline 8',
+            price: 10,
+            category: "category",
+            date: moment().format()
         })
 
 

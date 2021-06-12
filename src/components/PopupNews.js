@@ -94,7 +94,7 @@ const PopupNews = ({from, title_init, content_init, id}) => {
                             name="Title"
                             autoComplete="Title"
                             autoFocus
-                            value={title_init}
+                            value={title}
                             onChange={event => setTitle(event.target.value)} />
                         <TextField
                             variant="outlined"

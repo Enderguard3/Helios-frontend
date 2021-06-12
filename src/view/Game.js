@@ -5,10 +5,14 @@ import Navbar from "../components/Navbar";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Footer from "../components/Footer";
 import GameComponent from "../components/GameComponent";
+import PopupGame from "../components/PopupGame";
 
 const style = makeStyles(theme => ({
     comment: {
         marginTop: '1%',
+    },
+    btnAdd: {
+        textAlign: 'right'
     },
     action: {
         marginTop: '1%',
@@ -46,7 +50,9 @@ const Game = () => {
                         {nbGameShown >= nbGame ? null : <ExpandMoreIcon />}
                     </IconButton>
                 </Grid>
-                <Grid item xs={4} />
+                <Grid item xs={4} className={classes.btnAdd}>
+                    <PopupGame from='games' title_init={''} desc_init={''} price_init={0} category_init={''} nbPLayer_init={0} age_init={[0, 0]} duration_init={''} />
+                </Grid>
             </Grid>
 
             <Footer />
