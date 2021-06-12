@@ -6,6 +6,8 @@ import Profile  from './view/Profile'
 import Test  from './view/Test'
 import News from './view/News'
 import News_details from './view/News_details'
+import Comments from "./view/Comments"
+import Comments_details from "./view/Comment_detail"
 const routes = [
     {
         'name': 'Login',
@@ -43,6 +45,14 @@ const routes = [
         'name': 'News_details',
         'path': '/News_details',
         'component': News_details
+    }, {
+        'name': 'Comments',
+        'path': '/Comments',
+        'component': Comments
+    }, {
+        'name': 'Comments_details',
+        'path': '/Comments_details',
+        'component': Comments_details
     }
 ]
 
