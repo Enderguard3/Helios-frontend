@@ -34,16 +34,17 @@ const useStyle = makeStyles(theme => ({
 
 }))
 
-const PopupProfile = ({from, title_init, content_init, id}) => {
+const PopupProfile = ({from, localisation_init, email_init, password_init, id}) => {
     const classes = useStyle()
     const [open, setOpen] = useState(false)
-    const [title, setTitle] = useState(title_init)
-    const [content, setContent] = useState(content_init)
+    const [localisation, setLocalisation] = useState(localisation_init)
+    const [email, setEmail] = useState(email_init)
+    const [password, setPassword] = useState(password_init)
     const history = useHistory()
 
     const handleSubmit = event => {
         event.preventDefault()
-        updateProfile(title, content, id)
+        updateProfile(localisation, email, password, id)
         history.push({
             pathname: 'Profile',
             state: {id}
@@ -51,8 +52,13 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
         handleClose()
     }
 
-    const handleOpen = () => {setOpen(true)}
-    const handleClose = () => {setOpen(false)}
+    const handleOpen = () => {
+        setOpen(true)
+    }
+
+    const handleClose = () => {
+        setOpen(false)
+    }
 
     return (
         <div>
@@ -76,8 +82,8 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
                                 name="Localisation du siège sociale"
                                 autoComplete="current-local"
                                 autoFocus
-                                value={title_init}
-                                onChange={event => setTitle(event.target.value)} />
+                                value={localisation}
+                                onChange={event => setLocalisation(event.target.value)} />
                             <TextField
                                 variant="outlined"
                                 margin="normal"
@@ -89,8 +95,8 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
                                 type="Email"
                                 id="Email"
                                 autoComplete="current-email"
-                                value={content}
-                                onChange={event => setContent(event.target.value)}  />
+                                value={email}
+                                onChange={event => setEmail(event.target.value)}  />
                             <TextField
                                 variant="outlined"
                                 margin="normal"
@@ -102,8 +108,8 @@ const PopupProfile = ({from, title_init, content_init, id}) => {
                                 type="Password"
                                 id="Password"
                                 autoComplete="current-password"
-                                value={content}
-                                onChange={event => setContent(event.target.value)}  />
+                                value={password}
+                                onChange={event => setPassword(event.target.value)}  />
                             <Button
                                 type="submit"
                                 fullWidth
