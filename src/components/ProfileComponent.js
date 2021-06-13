@@ -1,7 +1,6 @@
 import { makeStyles, Container, Grid, Paper} from "@material-ui/core"
 import React from 'react'
 import logo from "../assets/brandlogo/logoAsmodee.png"
-import { useHistory } from "react-router-dom"
 import PopupProfile from "./PopupProfile"
 
 const useStyle = makeStyles({
@@ -61,14 +60,6 @@ const useStyle = makeStyles({
 
 const ProfileComponent = () => {
     const classes = useStyle()
-    const history = useHistory()
-    
-    const handleClickPage = (id) => {
-        history.push({
-            pathname: 'Profile',
-            state: {id}
-        })
-    }
 
     return (
         <Container fi>

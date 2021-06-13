@@ -1,8 +1,6 @@
 
 const getProfile = () => {
-
     let user = []
-
         user.push({
             title: title + ' ' + id,
             content: content,
