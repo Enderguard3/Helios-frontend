@@ -1,11 +1,13 @@
 import Login  from './view/Login'
 import Dashboard  from './view/Dashboard'
 import Rating  from './view/Rating'
-import Leaderboard  from './view/Leaderboard'
 import Profile  from './view/Profile'
-import Test  from './view/Test'
 import News from './view/News'
 import News_details from './view/News_details'
+import Comments from "./view/Comments"
+import Comments_details from "./view/Comment_detail"
+import Game from "./view/Game"
+import Game_detail from "./view/Game_detail";
 const routes = [
     {
         'name': 'Login',
@@ -23,18 +25,9 @@ const routes = [
         'component': Rating
     },
     {
-        'name': 'Leaderboard',
-        'path': '/Leaderboard',
-        'component': Leaderboard
-    },
-    {
         'name': 'Profile',
         'path': '/Profile',
         'component': Profile
-    }, {
-        'name': 'Test',
-        'path': '/Test',
-        'component': Test
     }, {
         'name': 'News',
         'path': '/News',
@@ -43,6 +36,22 @@ const routes = [
         'name': 'News_details',
         'path': '/News_details',
         'component': News_details
+    }, {
+        'name': 'Comments',
+        'path': '/Comments',
+        'component': Comments
+    }, {
+        'name': 'Comments_details',
+        'path': '/Comments_details',
+        'component': Comments_details
+    }, {
+        'name': 'Game',
+        'path': '/Game',
+        'component': Game
+    }, {
+        'name': 'Game_detail',
+        'path': '/Game_detail',
+        'component': Game_detail
     }
 ]
 

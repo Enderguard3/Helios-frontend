@@ -1,7 +1,7 @@
 import {useState} from "react"
 import {useHistory} from "react-router-dom"
 import {AppBar, Toolbar, Typography, IconButton, Divider, List, ListItem, ListItemIcon, ListItemText, Drawer, makeStyles} from '@material-ui/core'
-import {Home, CommentOutlined, AccountCircle, InsertChart, Menu, ArrowLeft, Announcement} from '@material-ui/icons'
+import {Home, CommentOutlined, AccountCircle, Menu, ArrowLeft, Announcement, Games} from '@material-ui/icons'
 
 const style = makeStyles(theme => ({
     menu: {
@@ -59,9 +59,8 @@ const Navbar = ({name}) => {
                     {[
                             {name: "Dashboard", icon: <Home />},
                             {name: "Rating", icon: <CommentOutlined />},
-                            {name: "Leaderboard", icon: <InsertChart />},
                             {name: "News", icon: <Announcement />},
-                            {name: "Test", icon: null},
+                            {name: "Game", icon: <Games />},
                         ].map(({name, icon}) => (
                             <ListItem button key={name} onClick={() => handleClickPage(name)}>
                                 <ListItemIcon>
