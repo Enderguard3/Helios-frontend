@@ -1,6 +1,7 @@
 import { makeStyles, Container, Grid, Paper, Button} from "@material-ui/core"
 import React from 'react'
 import logo from "../assets/brandlogo/logoAsmodee.png"
+import { useHistory } from "react-router-dom"
 import PopupProfile from "./PopupProfile"
 
 const useStyle = makeStyles({
@@ -59,8 +60,15 @@ const useStyle = makeStyles({
 })
 
 const ProfileComponent = () => {
-    const classes = useStyle();
+    const classes = useStyle()
+    const history = useHistory()
     
+    const handleClickPage = (id) => {
+        history.push({
+            pathname: 'Profile',
+            state: {id}
+        })
+    }
 
     return (
         <Container fi>
@@ -78,42 +86,28 @@ const ProfileComponent = () => {
                                     Nom entreprise
                                 </Paper>
                             </Grid>
-                            <Grid item xs={6} sm={4}>
-                                <Paper
-                                elevation={3}
-                                variant="outlined">
-                                    Followers
-                                </Paper>
-                            </Grid>
-                            <Grid item xs={6} sm={4}>
+                            <Grid item xs={6}>
                                 <Paper
                                 elevation={3}
                                 variant="outlined">
                                     Posts
                                 </Paper>
                             </Grid>
-                            <Grid item xs={6} sm={4}>
+                            <Grid item xs={6}>
                                 <Paper
                                 elevation={3}
                                 variant="outlined">
                                     Commentaire
                                 </Paper>
                             </Grid>
-                            <Grid item xs={4}>
-                                <Paper
-                                elevation={3}
-                                variant="outlined">
-                                    nbFollowers
-                                </Paper>
-                            </Grid>
-                            <Grid item xs={4}>
+                            <Grid item xs={6}>
                                 <Paper
                                 elevation={3}
                                 variant="outlined">
                                     nbPosts
                                 </Paper>
                             </Grid>
-                            <Grid item xs={4}>
+                            <Grid item xs={6}>
                                 <Paper
                                 elevation={3}
                                 variant="outlined">
@@ -122,9 +116,7 @@ const ProfileComponent = () => {
                             </Grid>
                         </Grid>
                         <div className={classes.lowerBox}>
-                            <div className={classes.spacing}>Localisation siège sociale </div>
-                            <div className={classes.spacing}>Email</div>
-                            <div className={classes.spacing}>Mot de passe</div>
+                            <div className={classes.spacing}>Mail</div>
                         </div>
                         <PopupProfile />
                     </div>

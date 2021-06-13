@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Button, makeStyles, Dialog, DialogTitle, DialogContent, TextField,IconButton}
     from '@material-ui/core';
-import AddBox from '@material-ui/icons/AddBox'
 import EditIcon from '@material-ui/icons/Edit';
 import {useHistory} from 'react-router-dom'
 import updateProfile from "../services/data import/update_profile";
@@ -34,17 +33,15 @@ const useStyle = makeStyles(theme => ({
 
 }))
 
-const PopupProfile = ({from, localisation_init, email_init, password_init, id}) => {
+const PopupProfile = ({from, email_init, id}) => {
     const classes = useStyle()
     const [open, setOpen] = useState(false)
-    const [localisation, setLocalisation] = useState(localisation_init)
     const [email, setEmail] = useState(email_init)
-    const [password, setPassword] = useState(password_init)
     const history = useHistory()
 
     const handleSubmit = event => {
         event.preventDefault()
-        updateProfile(localisation, email, password, id)
+        updateProfile( email, id)
         history.push({
             pathname: 'Profile',
             state: {id}
@@ -77,39 +74,14 @@ const PopupProfile = ({from, localisation_init, email_init, password_init, id}) 
                                 margin="normal"
                                 required
                                 fullWidth
-                                id="Loca"
-                                label="Localisation du siège sociale"
-                                name="Localisation du siège sociale"
-                                autoComplete="current-local"
-                                autoFocus
-                                value={localisation}
-                                onChange={event => setLocalisation(event.target.value)} />
-                            <TextField
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
                                 multiline
-                                name="Email"
+                                name="email"
                                 label="Email"
-                                type="Email"
-                                id="Email"
+                                type="mail"
+                                id="email"
                                 autoComplete="current-email"
                                 value={email}
                                 onChange={event => setEmail(event.target.value)}  />
-                            <TextField
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
-                                multiline
-                                name="Password"
-                                label="Mot de passe"
-                                type="Password"
-                                id="Password"
-                                autoComplete="current-password"
-                                value={password}
-                                onChange={event => setPassword(event.target.value)}  />
                             <Button
                                 type="submit"
                                 fullWidth
