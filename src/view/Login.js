@@ -38,9 +38,10 @@ const Login = () => {
 
     const handleSubmit = event => {
         event.preventDefault()
-
-        if (login_auth_token(company, login, password) === 0)
-            history.push('/Dashboard')
+        login_auth_token(company, login, password).then(res => {
+            if (res === 0)
+                history.push('/Dashboard')
+        })
     }
 
     const classes = useStyles();
