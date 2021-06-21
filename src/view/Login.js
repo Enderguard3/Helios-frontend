@@ -38,6 +38,7 @@ const Login = () => {
 
     const handleSubmit = event => {
         event.preventDefault()
+        history.push('/Dashboard')
         login_auth_token(company, login, password).then(res => {
             if (res === 0)
                 history.push('/Dashboard')
